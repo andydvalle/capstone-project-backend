@@ -42,12 +42,12 @@ Medication.create({
     name: "Lisinopril",
     dose: "20mg",
     frequency: "Daily",
-    route: "Oral",
+    route: "Oral"
 })
 
 Medication.create({
     name: "Metformin",
     dose: "500mg",
     frequency: "Daily with evening meal",
-    route: "Oral",
+    route: "Oral"
 })
