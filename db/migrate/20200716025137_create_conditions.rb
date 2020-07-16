@@ -3,7 +3,7 @@ class CreateConditions < ActiveRecord::Migration[6.0]
     create_table :conditions do |t|
       t.string :name
       t.text :description
-      t.integer :profile_id
+      t.integer :patient_id
 
       t.timestamps
     end
