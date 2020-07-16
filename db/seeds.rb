@@ -13,7 +13,12 @@
 
 andy = User.create({
     username: "andy", 
-    password_digest: "andy"
+    password: "andy"
+})
+
+hal = User.create({
+    username: "hal", 
+    password: "hal"
 })
 
 patient = Patient.create({

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       resources :conditions
       resources :patients
       resources :users
-      post '/login', to: 'auth#create'
-      get '/profile', to: 'users#profile'
+      post '/auth', to: 'auth#create'
+      get '/current_user', to: 'auth#show'
     end
   end
 
