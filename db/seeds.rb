@@ -21,12 +21,19 @@ hal = User.create({
     password: "hal"
 })
 
-patient = Patient.create({
+patient1 = Patient.create({
     name: "Patient1",
     dob: "02/27/1989",
     sex: "M",
     age: 31,
     user_id: 1
+})
+patient2 = Patient.create({
+    name: "Patient2",
+    dob: "02/24/1991",
+    sex: "F",
+    age: 29,
+    user_id: 2
 })
 
 htn = Condition.create({
@@ -57,7 +64,10 @@ metformin = Medication.create({
     route: "Oral"
 })
 
-patient.conditions << htn
-patient.conditions << dm
-patient.medications << lisinopril
-patient.medications << metformin
+patient1.conditions << htn
+patient1.conditions << dm
+patient1.medications << lisinopril
+patient1.medications << metformin
+
+patient2.conditions << htn
+patient2.medications << lisinopril
