@@ -33,6 +33,13 @@ patient2 = Patient.create({
     dob: "02/24/1991",
     sex: "F",
     age: 29,
+    user_id: 1
+})
+patient3 = Patient.create({
+    name: "Patient3",
+    dob: "01/01/1991",
+    sex: "F",
+    age: 29,
     user_id: 2
 })
 
@@ -71,3 +78,6 @@ patient1.medications << metformin
 
 patient2.conditions << htn
 patient2.medications << lisinopril
+
+patient3.conditions << dm
+patient3.medications << metformin
