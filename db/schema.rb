@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 2020_07_17_004812) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "name"
+    t.string "firstName"
+    t.string "lastName"
     t.string "dob"
-    t.string "sex"
-    t.integer "age"
+    t.string "allergies"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

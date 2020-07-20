@@ -22,24 +22,24 @@ hal = User.create({
 })
 
 patient1 = Patient.create({
-    name: "Patient1",
+    firstName: "Bronn",
+    lastName: "Pup",
     dob: "02/27/1989",
-    sex: "M",
-    age: 31,
+    allergies: "none",
     user_id: 1
 })
 patient2 = Patient.create({
-    name: "Patient2",
+    firstName: "Zuko",
+    lastName: "Kitty",
     dob: "02/24/1991",
-    sex: "F",
-    age: 29,
+    allergies: "none",
     user_id: 1
 })
 patient3 = Patient.create({
-    name: "Patient3",
+    firstName: "Jane",
+    lastName: "Doe",
     dob: "01/01/1991",
-    sex: "F",
-    age: 29,
+    allergies: "Codeine",
     user_id: 2
 })
 
