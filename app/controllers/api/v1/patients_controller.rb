@@ -2,7 +2,7 @@ class Api::V1::PatientsController < ApplicationController
     def index
         patients = Patient.all
         #filter here grab only patient from current_user (from headers auth jwt token)
-        render json: patients.to_json(include: [:conditions, :medications])
+        render json: patients.to_json(include: [:conditions, :medications, :appointments, :clinics])
     end
 
     def new
