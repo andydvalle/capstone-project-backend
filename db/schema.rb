@@ -10,34 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_004812) do
+ActiveRecord::Schema.define(version: 2020_07_20_181638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "conditions", force: :cascade do |t|
-    t.string "name"
+  create_table "appointments", force: :cascade do |t|
+    t.string "title"
+    t.string "date"
+    t.string "time"
+    t.text "notes"
+    t.integer "patient_id"
+    t.integer "clinic_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "conditions_patients", id: false, force: :cascade do |t|
-    t.bigint "patient_id", null: false
-    t.bigint "condition_id", null: false
+  create_table "clinics", force: :cascade do |t|
+    t.string "name"
+    t.string "practitioner"
+    t.string "location"
+    t.string "number"
+    t.text "notes"
+    t.integer "patient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.text "notes"
+    t.integer "patient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "medications", force: :cascade do |t|
-    t.string "name"
-    t.string "dose"
-    t.string "frequency"
-    t.string "route"
+    t.string "name_route"
+    t.string "strength"
+    t.string "instructions"
+    t.text "notes"
+    t.boolean "onSun"
+    t.boolean "onMon"
+    t.boolean "onTue"
+    t.boolean "onWed"
+    t.boolean "onThu"
+    t.boolean "onFri"
+    t.boolean "onSat"
+    t.integer "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "medications_patients", id: false, force: :cascade do |t|
-    t.bigint "patient_id", null: false
-    t.bigint "medication_id", null: false
   end
 
   create_table "patients", force: :cascade do |t|

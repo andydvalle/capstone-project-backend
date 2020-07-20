@@ -21,63 +21,109 @@ hal = User.create({
     password: "hal"
 })
 
-patient1 = Patient.create({
+bronn = Patient.create({
     firstName: "Bronn",
-    lastName: "Pup",
+    lastName: "Pupperson",
     dob: "02/27/1989",
     allergies: "none",
     user_id: 1
 })
-patient2 = Patient.create({
+zuko = Patient.create({
     firstName: "Zuko",
-    lastName: "Kitty",
+    lastName: "McKitty",
     dob: "02/24/1991",
     allergies: "none",
     user_id: 1
 })
-patient3 = Patient.create({
+jane = Patient.create({
     firstName: "Jane",
     lastName: "Doe",
     dob: "01/01/1991",
     allergies: "Codeine",
     user_id: 2
 })
+john = Patient.create({
+    firstName: "John",
+    lastName: "Doe",
+    dob: "01/01/1991",
+    allergies: "Penicillin",
+    user_id: 2
+})
 
 htn = Condition.create({
-    name: "hypertension"
-    # description: "Blood pressure is the force of your blood pushing against the walls of your arteries. Each time your heart beats, it pumps blood into the arteries. Your blood pressure is highest when your heart beats, pumping the blood. This is called systolic pressure. When your heart is at rest, between beats, your blood pressure falls. This is called diastolic pressure.",
+    name: "hypertension",
+    notes: "this is the one with my high blood pressure, usually around 145/90",
+    patient_id: 2
 })
 
 dm = Condition.create({
-    name: "Diabetes"
-    # description: "Diabetes is a disease in which your blood glucose, or blood sugar, levels are too high. Glucose comes from the foods you eat. Insulin is a hormone that helps the glucose get into your cells to give them energy. With type 1 diabetes, your body does not make insulin. With type 2 diabetes, the more common type, your body does not make or use insulin well. Without enough insulin, the glucose stays in your blood. You can also have prediabetes. This means that your blood sugar is higher than normal but not high enough to be called diabetes. Having prediabetes puts you at a higher risk of getting type 2 diabetes.
-
-    # Over time, having too much glucose in your blood can cause serious problems. It can damage your eyes, kidneys, and nerves. Diabetes can also cause heart disease, stroke and even the need to remove a limb. Pregnant women can also get diabetes, called gestational diabetes.
-    
-    # Blood tests can show if you have diabetes. One type of test, the A1C, can also check on how you are managing your diabetes. Exercise, weight control and sticking to your meal plan can help control your diabetes. You should also monitor your blood glucose level and take medicine if prescribed.",
+    name: "Diabetes",
+    notes: "I need to consider decreasing my carbs and sugar intake",
+    patient_id: 1
 })
 
 lisinopril = Medication.create({
-    name: "Lisinopril",
-    dose: "20mg",
-    frequency: "Daily",
-    route: "Oral"
+    name_route: "Lisinopril (oral pill)",
+    strength: "20mg tab",
+    instructions: "Daily",
+    notes: "this one is for my high bp",
+    onSun: true,
+    onMon: true,
+    onTue: true,
+    onWed: true,
+    onThu: true,
+    onFri: true,
+    onSat: true,
+    patient_id: 2
 })
 
 metformin = Medication.create({
-    name: "Metformin",
-    dose: "500mg",
-    frequency: "Daily with evening meal",
-    route: "Oral"
+    name_route: "Metformin",
+    strength: "500mg tab",
+    instructions: "Daily with evening meal",
+    notes: "this one is for my high blood sugar, longer acting",
+    onSun: true,
+    onMon: true,
+    onTue: true,
+    onWed: true,
+    onThu: true,
+    onFri: true,
+    onSat: true,
+    patient_id: 1
 })
 
-patient1.conditions << htn
-patient1.conditions << dm
-patient1.medications << lisinopril
-patient1.medications << metformin
+clinic1 = Clinic.create({
+    name: "Care Medical Clinic",
+    practitioner: "Dr. Johnson",
+    location: "1234 Main St  Seattle WA 98118",
+    number: "123-456-7890",
+    notes: "Cold building, bring a jacket",
+    patient_id: 1
+})
 
-patient2.conditions << htn
-patient2.medications << lisinopril
+clinic2 = Clinic.create({
+    name: "Care Medical Center",
+    practitioner: "Dr. Jackson",
+    location: "1234 Main St  Seattle WA 98118",
+    number: "123-456-7890",
+    notes: "Yellow building around the corner from parking lot",
+    patient_id: 2
+})
 
-patient3.conditions << dm
-patient3.medications << metformin
+appt1 = Appointment.create({
+    title: "Doctor Visit",
+    date: "2020-07-20",
+    time: "13:00",
+    notes: "Don't forget to bring meds",
+    patient_id: 1,
+    clinic_id:1
+})
+
+appt2 = Appointment.create({
+    title: "First appointment",
+    date: "2020-07-21",
+    time: "09:00",
+    notes: "Bring a list of meds",
+    patient_id: 2,
+    clinic_id: 2
+})

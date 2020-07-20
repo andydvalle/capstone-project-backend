@@ -2,6 +2,8 @@ require 'byebug'
 
 class ApplicationController < ActionController::API
 
+    #before action here
+
     def issue_token(user)
         JWT.encode({user_id: user.id, username: user.username}, 'secret_key', 'HS256')
     end
