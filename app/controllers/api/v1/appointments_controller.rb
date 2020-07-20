@@ -10,7 +10,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
     def create
         appointment = Appointment.create(appointment_params)
-        render json: appointment.to_json(include: [:patients, :clinics])
+        render json: appointment.to_json(include: [:patient, :clinic])
     end
 
     private
