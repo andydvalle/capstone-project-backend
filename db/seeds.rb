@@ -67,13 +67,13 @@ lisinopril = Medication.create({
     strength: "20mg tab",
     instructions: "Daily",
     notes: "this one is for my high bp",
-    onSun: true,
-    onMon: true,
-    onTue: true,
-    onWed: true,
-    onThu: true,
-    onFri: true,
-    onSat: true,
+    sunday: true,
+    monday: true,
+    tuesday: true,
+    wednesday: true,
+    thursday: true,
+    friday: true,
+    saturday: true,
     patient_id: 2
 })
 
@@ -82,13 +82,13 @@ metformin = Medication.create({
     strength: "500mg tab",
     instructions: "Daily with evening meal",
     notes: "this one is for my high blood sugar, longer acting",
-    onSun: true,
-    onMon: true,
-    onTue: true,
-    onWed: true,
-    onThu: true,
-    onFri: true,
-    onSat: true,
+    sunday: true,
+    monday: true,
+    tuesday: true,
+    wednesday: true,
+    thursday: true,
+    friday: true,
+    saturday: true,
     patient_id: 1
 })
 

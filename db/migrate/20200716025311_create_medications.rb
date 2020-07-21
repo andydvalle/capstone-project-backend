@@ -5,13 +5,13 @@ class CreateMedications < ActiveRecord::Migration[6.0]
       t.string :strength
       t.string :instructions
       t.text :notes
-      t.boolean :onSun
-      t.boolean :onMon
-      t.boolean :onTue
-      t.boolean :onWed
-      t.boolean :onThu
-      t.boolean :onFri
-      t.boolean :onSat
+      t.boolean :sunday
+      t.boolean :monday
+      t.boolean :tuesday
+      t.boolean :wednesday
+      t.boolean :thursday
+      t.boolean :friday
+      t.boolean :saturday
       t.integer :patient_id
 
       t.timestamps
