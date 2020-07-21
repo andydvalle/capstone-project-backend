@@ -3,7 +3,7 @@ require 'byebug'
 class Api::V1::PatientsController < ApplicationController
     def index
         #filter here grab only patient from current_user (from headers auth jwt token)
-        user = User.find(user_id)
+        user = current_user()
         patients = user.patients
         render json: patients.to_json(include: [:conditions, :medications, :appointments, :clinics])
     end
