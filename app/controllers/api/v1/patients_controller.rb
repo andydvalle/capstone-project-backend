@@ -16,6 +16,16 @@ class Api::V1::PatientsController < ApplicationController
         patient = Patient.create(patient_params)
         render json: patient.to_json(include: [:conditions, :medications, :appointments, :clinics])
     end
+
+    def edit
+        patient = Patient.find(params[:id])
+    end
+
+    def update
+        patient = Patient.find(params[:id])
+        patient.update(patient_params)
+        render json: patient.to_json
+    end
     
     def destroy
         patient = Patient.find(params[:id])
