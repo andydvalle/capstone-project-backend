@@ -16,6 +16,6 @@ class Api::V1::MedicationsController < ApplicationController
     private
     
     def medication_params
-        params.require(:medication).permit(:name_route, :strength, :instructions, :notes, :onSun, :onMon, :onTue, :onWed, :onThu, :onFri, :onSat, :patient_id)
+        params.require(:medication).permit(:name_route, :strength, :instructions, :notes, :sunday, :tuesday, :monday, :tuesday, :wednesday, :friday, :saturday, :patient_id)
     end
 end
