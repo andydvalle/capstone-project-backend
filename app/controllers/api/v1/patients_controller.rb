@@ -20,6 +20,7 @@ class Api::V1::PatientsController < ApplicationController
     def destroy
         patient = Patient.find(params[:id])
         patient.destroy
+        render json: patient.to_json
     end
 
     private
