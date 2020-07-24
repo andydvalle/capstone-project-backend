@@ -13,6 +13,22 @@ class Api::V1::ClinicsController < ApplicationController
         render json: clinic.to_json(include: [:appointments, :patient])
     end
 
+    def edit
+        clinic = Clinic.find(params[:id])
+    end
+
+    def update
+        clinic = Clinic.find(params[:id])
+        clinic.update(clinic_params)
+        render json: clinic.to_json
+    end
+    
+    def destroy
+        clinic = Clinic.find(params[:id])
+        clinic.destroy
+        render json: clinic.to_json
+    end    
+
     private
     
     def clinic_params
