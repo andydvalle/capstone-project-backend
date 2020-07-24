@@ -29,7 +29,11 @@ ActiveRecord::Schema.define(version: 2020_07_20_181638) do
   create_table "clinics", force: :cascade do |t|
     t.string "name"
     t.string "practitioner"
-    t.string "location"
+    t.string "address"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
     t.string "number"
     t.text "notes"
     t.integer "patient_id"

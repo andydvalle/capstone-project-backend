@@ -32,7 +32,7 @@ class Api::V1::ClinicsController < ApplicationController
     private
     
     def clinic_params
-        params.require(:clinic).permit(:name, :practitioner, :location, :number, :notes, :patient_id)
+        params.require(:clinic).permit(:name, :practitioner, :address, :address2, :city, :state, :zip, :number, :notes, :patient_id)
     end
 
 end

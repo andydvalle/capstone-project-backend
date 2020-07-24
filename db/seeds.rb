@@ -95,7 +95,12 @@ metformin = Medication.create({
 clinic1 = Clinic.create({
     name: "Care Medical Clinic",
     practitioner: "Dr. Johnson",
-    location: "1234 Main St  Seattle WA 98118",
+    address: "1234 Main St",
+    address2: "",
+    city: "Seattle",
+    state: "WA",
+    zip: "98118",
+    # location: "1234 Main St  Seattle WA 98118",
     number: "123-456-7890",
     notes: "Cold building, bring a jacket",
     patient_id: 1
@@ -104,7 +109,12 @@ clinic1 = Clinic.create({
 clinic2 = Clinic.create({
     name: "Care Medical Center",
     practitioner: "Dr. Jackson",
-    location: "1234 Main St  Seattle WA 98118",
+    # location: "1234 Main St  Seattle WA 98118",
+    address: "1234 Main St",
+    address2: "",
+    city: "Seattle",
+    state: "WA",
+    zip: "98118",    
     number: "123-456-7890",
     notes: "Yellow building around the corner from parking lot",
     patient_id: 2
