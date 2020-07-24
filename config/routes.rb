@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      #nest patients under users with do end block
       resources :users
       resources :patients
       resources :clinics

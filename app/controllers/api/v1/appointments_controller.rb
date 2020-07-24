@@ -13,7 +13,7 @@ class Api::V1::AppointmentsController < ApplicationController
         render json: appointment.to_json(include: [:patient, :clinic])
     end
 
-        def edit
+    def edit
         appointment = Appointment.find(params[:id])
     end
 
