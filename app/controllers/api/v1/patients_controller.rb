@@ -5,6 +5,7 @@ class Api::V1::PatientsController < ApplicationController
         #filter here grab only patient from current_user (from headers auth jwt token)
         user = current_user()
         patients = user.patients
+        # patients = Patient.all
         render json: patients.to_json(include: [:conditions, :medications, :appointments, :clinics])
     end
 
