@@ -1,5 +1,3 @@
-require 'byebug'
-
 class ApplicationController < ActionController::API
 
     #before action here

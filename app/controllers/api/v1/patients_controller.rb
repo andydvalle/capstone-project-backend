@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Api::V1::PatientsController < ApplicationController
     def index
         #filter here grab only patient from current_user (from headers auth jwt token)
